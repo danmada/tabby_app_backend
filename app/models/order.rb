@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
-  belongs_to :tab, dependent: :destroy
-  belongs_to :drink, dependent: :destroy
+  belongs_to :tab
+  belongs_to :drink
 end
