@@ -7,7 +7,7 @@ class TabsController < ApplicationController
 
     def show
         tab = Tab.find_by(id: params[:id])
-        render json: tab
+        render json: tab, include: ['orders', 'orders.drink']
     end
 
     def create
