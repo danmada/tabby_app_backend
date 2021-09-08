@@ -6,8 +6,12 @@ class BarsController < ApplicationController
     end
 
     def show
-        bar = Bar.find_by(id: params[:id])
-        render json: bar
+        bar = Bar.find_by(id: session[:bar_id])
+        if bar
+            render json: bar
+        else
+            render json: { error: "Not authorized" }, status: :unauthorized
+        end
     end
 
     def create

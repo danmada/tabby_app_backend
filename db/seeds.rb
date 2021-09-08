@@ -9,15 +9,15 @@ Tab.destroy_all
 
 
 
-c1 = Customer.create(name: "John Smith", age: 25, email: "jsmith@gmail", credit_card: 2674891674537892)
-c2 = Customer.create(name: "Amy Tan", age: 34, email: "jlc@gmail", credit_card: 2674891674535109)
-c3 = Customer.create(name: "Nicole Madariaga", age: 40, email: "bosscat@gmail", credit_card: 4082765430989090)
-c4 = Customer.create(name: "Luna Kelly", age: 21, email: "lunakel@gmail", credit_card: 4067026460801462)
+c1 = Customer.create(username: "JSmith", name: "John Smith", age: 25, email: "jsmith@gmail", credit_card: 2674891674537892)
+c2 = Customer.create(username: "AmyT", name: "Amy Tan", age: 34, email: "jlc@gmail", credit_card: 2674891674535109)
+c3 = Customer.create(username: "NickyTheeCat", name: "Nicole Madariaga", age: 40, email: "bosscat@gmail", credit_card: 4082765430989090)
+c4 = Customer.create(username: "Trills4Life", name: "Luna Kelly", age: 21, email: "lunakel@gmail", credit_card: 4067026460801462)
 
-b1 = Bar.create(name: "Jenny's", latitude: 41.97078017046549, longitude: -87.65247295487663)
-b2 = Bar.create(name: "Uptown Lounge", latitude: 41.96919369605612, longitude: -87.65917481851652)
-b3 = Bar.create(name: "The Green Mill", latitude: 41.96922061841993, longitude: -87.65992851936497)
-b4 = Bar.create(name: "Fat Cat", latitude: 41.97010405782312, longitude: -87.6599057204502)
+b1 = Bar.create(adminUser: "JennyAdmin", name: "Jenny's", latitude: 41.97078017046549, longitude: -87.65247295487663)
+b2 = Bar.create(adminUser: "ULAdmin", name: "Uptown Lounge", latitude: 41.96919369605612, longitude: -87.65917481851652)
+b3 = Bar.create(adminUser: "GMAdmin", name: "The Green Mill", latitude: 41.96922061841993, longitude: -87.65992851936497)
+b4 = Bar.create(adminUser: "FCAdmin", name: "Fat Cat", latitude: 41.97010405782312, longitude: -87.6599057204502)
 
 t1 = Tab.create(customer_id: c1.id, bar_id: b2.id, is_open: true)
 t2 = Tab.create(customer_id: c2.id, bar_id: b2.id, is_open: true)

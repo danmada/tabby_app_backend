@@ -1,8 +1,12 @@
 class CustomersController < ApplicationController
     wrap_parameters format: []
     def show
-        cust = Customer.find_by(id: params[:id])
-        render json: cust
+        cust = Customer.find_by(id: session[:customer_id])
+        if cust
+            render json: cust
+        else
+            render json: { error: "Not authorized" }, status: :unauthorized
+        end
     end
 
     def create
@@ -14,6 +18,6 @@ class CustomersController < ApplicationController
     private
 
     def cust_params
-        params.permit(:name, :age, :email, :credit_card)
+        params.permit(:username, :name, :age, :email, :credit_card)
     end
 end
