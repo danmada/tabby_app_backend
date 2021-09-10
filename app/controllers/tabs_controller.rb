@@ -21,7 +21,7 @@ class TabsController < ApplicationController
             tab.update(tabs_params)
             render json: tab
         else
-            render json: {error: "Order Not Found"}, status: :not_found
+            render json: {error: "Tab Not Found"}, status: :not_found
         end
     end
 
