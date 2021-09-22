@@ -10,10 +10,10 @@ Rails.application.routes.draw do
 
   post "/login", to: "sessions#create"
   get "/me", to: "customers#show"
-  delete "/logout", to: "sessions#destroy"
+  get "/logout", to: "sessions#destroy"
 
   post "/barlogin", to: "bar_sessions#create"
   get "/barme", to: "bars#show"
-  delete "/barlogout", to: "sessions#destroy"
+  get "/barlogout", to: "sessions#destroy"
   
 end

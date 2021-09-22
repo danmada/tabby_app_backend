@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+  # skip_before_action :authorize, only: [:create, :index, :destroy]
  
       def index
         cookies[:cookies_hi] ||= 'rose'
@@ -8,8 +10,12 @@ class SessionsController < ApplicationController
 
       def create
         cust = Customer.find_by(username: params[:username])
-        session[:customer_id] = cust.id
-        render json: cust
+        if cust && cust.authenticate(params[:password])
+            session[:customer_id] = cust.id
+            render json: cust, status: :created
+        else
+            render json: { error: ["Invalid username or password"] }, status: :unauthorized
+        end
       end
 
       def destroy

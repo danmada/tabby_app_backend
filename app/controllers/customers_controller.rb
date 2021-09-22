@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
-
+    wrap_parameters format: []
+    skip_before_action :authorize, only: [:create, :show]
+    
     def show
         cust = Customer.find_by(id: session[:customer_id])
         render json: cust
@@ -14,6 +16,6 @@ class CustomersController < ApplicationController
     private
 
     def cust_params
-        params.permit(:username, :name, :age, :email, :credit_card)
+        params.permit(:username, :name, :age, :email, :credit_card, :password, :password_confirmation)
     end
 end

@@ -7,10 +7,11 @@ class BarsController < ApplicationController
 
     def show
         bar = Bar.find_by(id: session[:bar_id])
+        if bar
         render json: bar
-        # else
-        #     render json: { error: "Not authorized" }, status: :unauthorized
-        # end
+        else
+            render json: { error: "Not authorized" }, status: :unauthorized
+        end
     end
 
     def create
@@ -21,6 +22,6 @@ class BarsController < ApplicationController
     private
 
     def bar_params
-        params.permit(:name, :latitude, :longitude)
+        params.permit(:name, :latitude, :longitude, :password, :password_confirmation)
     end
 end
