@@ -14,10 +14,10 @@ c2 = Customer.create(username: "AmyT", name: "Amy Tan", age: 34, email: "jlc@gma
 c3 = Customer.create(username: "NickyTheeCat", name: "Nicole Madariaga", age: 40, email: "bosscat@gmail", credit_card: 4082765430989090, password: "Feedme", password_confirmation: "Feedme")
 c4 = Customer.create(username: "Trills4Life", name: "Luna Kelly", age: 21, email: "lunakel@gmail", credit_card: 4067026460801462, password: "cat123", password_confirmation: "cat123")
 
-b1 = Bar.create(adminUser: "JennyAdmin", name: "Jenny's", latitude: 41.97078017046549, longitude: -87.65247295487663, password: "Password1", password_confirmation: "Password1")
-b2 = Bar.create(adminUser: "ULAdmin", name: "Uptown Lounge", latitude: 41.96919369605612, longitude: -87.65917481851652, password: "Password1", password_confirmation: "Password1")
-b3 = Bar.create(adminUser: "GMAdmin", name: "The Green Mill", latitude: 41.96922061841993, longitude: -87.65992851936497, password: "Password1", password_confirmation: "Password1")
-b4 = Bar.create(adminUser: "FCAdmin", name: "Fat Cat", latitude: 41.97010405782312, longitude: -87.6599057204502, password: "Password1", password_confirmation: "Password1")
+b1 = Bar.create(adminUser: "JennyAdmin", name: "Jenny's", street: "856 West Gunnison Street", city: "Chicago", state: "IL", zipcode: 60640, password: "Password1", password_confirmation: "Password1")
+b2 = Bar.create(adminUser: "ULAdmin", name: "Uptown Lounge", street: "1136 W Lawrence Ave", city: "Chicago", state: "IL", zipcode: 60640, password: "Password1", password_confirmation: "Password1")
+b3 = Bar.create(adminUser: "GMAdmin", name: "The Green Mill", street: "4802 N Broadway", city: "Chicago", state: "IL", zipcode: 60640, password: "Password1", password_confirmation: "Password1")
+b4 = Bar.create(adminUser: "FCAdmin", name: "Fat Cat", street: "4840 N Broadway", city: "Chicago", state: "IL", zipcode: 60640, password: "Password1", password_confirmation: "Password1")
 
 t1 = Tab.create(customer_id: c1.id, bar_id: b2.id, is_open: true)
 t2 = Tab.create(customer_id: c2.id, bar_id: b2.id, is_open: true)
